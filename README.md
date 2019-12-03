@@ -24,9 +24,9 @@ Stolen bikes is a typical problem in Malmö, where the Docly HQ is. We need your
 # Tech requirements
 
 - React
-- Tests (We like (Jest)[https://jestjs.io])
-- Linter (we really like (https://prettier.io)[prettier])
-- CSSinJS is a plus, but not a requirement ((JSS)[https://cssinjs.org/react-jss/], (styled-components)[https://www.styled-components.com])
+- Tests (we like [Jest](https://jestjs.io))
+- Linter (we like [https://prettier.io](prettier))
+- CSSinJS is a plus, but not a requirement ([JSS](https://cssinjs.org/react-jss/), [styled-components](https://www.styled-components.com))
 
 
 # Your challenge
