@@ -42,3 +42,7 @@ Stolen bikes is a typical problem in Malmö, where the Docly HQ is. We need your
 - Build a clean and robust React app
 - Publish the app on your chosen cloud provider
 - Let us know that you've completed the challenge
+
+# License
+
+This project is licensed under MIT. Feel free to use it anyway you see fit.
