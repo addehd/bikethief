@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/App.css'
+import Loading from './Loading'
 
 function Bikes() {
   const [incidents, setIncidentData] = useState({ incidents: [] })
@@ -45,6 +46,9 @@ function Bikes() {
          <input type="text" placeholder="Search for stolen bike's" onChange={(e)=>searchSpace(e)} />
       </label>
       <section>{items}</section>
+      { load &&
+        <Loading/>
+      }
     </div>
   )
 }
