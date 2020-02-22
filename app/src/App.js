@@ -1,13 +1,14 @@
-import React from 'react';
-import './styles/App.css';
-import Header from './components/Header.js';
+import React from 'react'
+import './styles/App.css'
+import Header from './components/Header.js'
 import Bikes from './components/Bikes.js'
+import Bike from './components/Bike.js'
 
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from "react-router-dom"
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
       <Header/>
       <Switch>
         <Route path="/" exact component={ Bikes }/>
+        <Route path="/bike/:id" component={ Bike }/>
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

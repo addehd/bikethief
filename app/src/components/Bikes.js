@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/App.css'
 import Loading from './Loading'
+import StandardTime from './StandardTime.js'
+import placeholder_img from '../img/placeholder.svg'
+import { Link } from "react-router-dom"
 
 function Bikes() {
   const [incidents, setIncidentData] = useState({ incidents: [] })
@@ -11,8 +14,8 @@ function Bikes() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `https://bikewise.org:443/api/v2/incidents?page=1&proximity=55.607405%2C12.998945&proximity_square=100`
-      )
+        `https://bikewise.org:443/api/v2/incidents?page=1&proximity=55.607405%2C12.998945&proximity_square=100`)
+
       setIncidentData(result.data)
       setLoad(false)
     }
@@ -29,14 +32,22 @@ function Bikes() {
     console.log(search)
     if(search == null){
         return data }
-    else if(data.title.toLowerCase().includes(search.search.toLowerCase()) || data.address.toLowerCase().includes(search.search.toLowerCase()) ){
+    else if( data.title.toLowerCase().includes(search.search.toLowerCase()) || data.address.toLowerCase().includes(search.search.toLowerCase()) ){
         return data
     }
   }).map(data=>{
     return(
-    <div className="listed" key={data.id}>
-          <span>{data.title}</span>
-    </div>
+      <div className="listed" key={data.id}>
+        { data.media.image_url_thumb && <img src={ data.media.image_url_thumb }/>
+        || <img src={ placeholder_img }/> }
+
+        <span>{data.title}</span>
+        <span>{data.address}</span>
+
+        <Link to={`/bike/${data.id}`}>{data.title}</Link>
+
+        <StandardTime time={data.occurred_at}/>
+      </div>
     )
   })
 
@@ -45,10 +56,9 @@ function Bikes() {
       <label>
          <input type="text" placeholder="Search for stolen bike's" onChange={(e)=>searchSpace(e)} />
       </label>
+
       <section>{items}</section>
-      { load &&
-        <Loading/>
-      }
+      { load && <Loading/> }
     </div>
   )
 }
