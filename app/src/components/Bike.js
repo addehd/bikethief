@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import StandardTime from './StandardTime.js'
 import Load from './Loading.js'
+import Gmap from './Gmap.js'
 
 //https://www.robinwieruch.de/react-hooks-fetch-data
 function Bike({ match }) {
@@ -34,6 +35,7 @@ function Bike({ match }) {
                  <img src={data.incident.media.image_url } alt="{ data.incident.title }"/>
                }
               </section>
+              <Gmap address={data.incident.address}/>
           </div>
         }
     </div>
