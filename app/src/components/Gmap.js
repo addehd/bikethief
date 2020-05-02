@@ -10,9 +10,9 @@ function Gmap(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      
+
       const address = props.address.replace(/\s/g, '')
-      
+
       const result = await axios(
         `https://maps.googleapis.com/maps/api/geocode/json?address=1600${ address }CA&key=AIzaSyA_HvqBaMcd9TsvziQlOMORVNaU_xkLK60`
       )

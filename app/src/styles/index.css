@@ -3,4 +3,100 @@ body {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+header {
+  text-align: center;
+  background: #00151e;
+  color: white;
+  padding: 1rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.listed {
+  background: #f7f7f7;
+  padding: 1rem;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 0.3rem;
+  border: 1px solid #e6e6e6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#bikes section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#bikes section > * {
+	flex: 1 50%;
+	max-width: 40rem;
+}
+
+span {
+	display: block;
+}
+
+input[type="text"] {
+  padding: 1rem 1rem 1rem 3rem;
+  margin: 3rem 1rem 3rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #cacaca;
+  min-width: 80%;
+}
+
+label {
+  position: relative;
+  display: block;
+  margin: auto;
+  max-width: 50rem;
+  text-align: center;
+}
+
+label:before {
+  content: "";
+  position: absolute;
+  left: 3.9rem;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+img.load {
+  display: block;
+  margin: auto;
+}
+
+section#bike-info {
+  margin:4rem auto;
+  display: block;
+  max-width: 1200px;
+  padding: 1rem;
+
+}
+
+#bike-info img {
+  margin: 2rem auto;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  label:before {
+    left: 2rem;
+  }
+  section#bike-info {
+    margin: auto;
+  }
 }
